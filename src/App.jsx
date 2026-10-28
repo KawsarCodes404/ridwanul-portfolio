@@ -42,7 +42,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="portfolio-shell min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-emerald-500/30 selection:text-teal-200">
+    <div className="portfolio-shell min-h-screen bg-[#07090e] text-zinc-100 flex flex-col font-sans selection:bg-blue-500/30 selection:text-cyan-200">
       {/* Top Navigation */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} theme={theme} onToggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
 

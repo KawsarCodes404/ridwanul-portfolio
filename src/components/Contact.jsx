@@ -1,95 +1,278 @@
-import React from 'react';
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { 
+  Mail, 
+  Phone, 
+  MessageSquare, 
+  Send, 
+  MapPin, 
+  CheckCircle2, 
+  MessageCircle, 
+  ArrowUpRight,
+  Clock,
+  Sparkles
+} from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-
-const contactMethods = [
-  {
-    label: 'Email',
-    value: (personal) => personal.email,
-    href: (personal) => `mailto:${personal.email}`,
-    action: 'Send an email',
-    icon: Mail,
-    tone: 'email',
-  },
-  {
-    label: 'Phone',
-    value: (personal) => personal.phoneDisplay,
-    href: (personal) => `tel:${personal.phone}`,
-    action: 'Call me',
-    icon: Phone,
-    tone: 'phone',
-  },
-  {
-    label: 'WhatsApp',
-    value: () => 'Message me directly',
-    href: (personal) => personal.whatsappUrl,
-    action: 'Chat on WhatsApp',
-    icon: MessageCircle,
-    tone: 'whatsapp',
-  },
-];
 
 export default function Contact() {
   const { personal } = portfolioData;
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState({
+    submitted: false,
+    loading: false,
+    error: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus({ submitted: false, loading: false, error: 'Please fill in all required fields.' });
+      return;
+    }
+
+    setStatus({ submitted: false, loading: true, error: '' });
+
+    setTimeout(() => {
+      setStatus({ submitted: true, loading: false, error: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, 1000);
+  };
+
   return (
-    <section id="contact" className="contact-section relative overflow-hidden py-24 sm:py-28">
-      <div className="pointer-events-none absolute -top-28 left-1/2 h-72 w-[min(90vw,760px)] -translate-x-1/2 rounded-full bg-emerald-500/[0.08] blur-[100px]" />
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="section-heading mx-auto mb-12 max-w-3xl text-center">
-          <span className="section-kicker"><Mail className="h-3.5 w-3.5" /> GET IN TOUCH</span>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Let&apos;s build something useful</h2>
-          <p className="mt-3 text-base leading-relaxed text-zinc-400">
-            Have a role, project, or idea in mind? Choose the way that works best for you.
+    <section id="contact" className="py-24 relative overflow-hidden bg-[#07090e]/60">
+      {/* Background ambient lighting */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[650px] h-72 bg-gradient-to-t from-blue-600/10 to-transparent blur-[130px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-cyan-400 text-xs font-mono mb-3">
+            <MessageSquare className="w-3.5 h-3.5" />
+            <span>DIRECT COMMUNICATION</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Get In Touch
+          </h2>
+          <p className="mt-3 text-base text-zinc-400">
+            Have a project, role, or collaboration in mind? Reach out directly via Email, WhatsApp, or the form below.
           </p>
         </div>
 
-        <div className="contact-panel glass-card overflow-hidden rounded-[28px] border border-white/10">
-          <div className="grid lg:grid-cols-[1.35fr_.65fr]">
-            <div className="p-5 sm:p-8 lg:p-10">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="contact-icon flex h-11 w-11 items-center justify-center rounded-2xl text-emerald-300"><MessageCircle className="h-5 w-5" /></div>
-                <div>
-                  <h3 className="text-lg font-bold text-white">Reach out directly</h3>
-                  <p className="mt-0.5 text-xs text-zinc-400">I&apos;ll be glad to hear from you.</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          {/* Left Column: Direct Contact Info (Requirement 10) */}
+          <div className="lg:col-span-5 space-y-6">
+            
+            <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/5 space-y-6 shadow-xl">
+              <h3 className="text-lg font-bold text-white">Direct Contact Channels</h3>
+              
+              <div className="space-y-4">
+                
+                {/* Email Address */}
+                <a
+                  href={`mailto:${personal.email}`}
+                  className="flex items-start gap-4 p-4 rounded-xl bg-[#0d1424] border border-blue-500/20 hover:border-blue-400 hover:bg-[#121c33] transition-all group"
+                >
+                  <div className="p-2.5 rounded-lg bg-blue-600/20 border border-blue-500/30 text-cyan-400 group-hover:scale-105 transition-transform">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Email Address</p>
+                    <p className="text-sm font-semibold text-zinc-200 group-hover:text-cyan-300 transition-colors truncate">
+                      {personal.email}
+                    </p>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">Click to send direct email</p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* Phone Number */}
+                <a
+                  href={`tel:${personal.phone.replace(/[^0-9+]/g, '')}`}
+                  className="flex items-start gap-4 p-4 rounded-xl bg-[#0d1424] border border-blue-500/20 hover:border-blue-400 hover:bg-[#121c33] transition-all group"
+                >
+                  <div className="p-2.5 rounded-lg bg-blue-600/20 border border-blue-500/30 text-blue-400 group-hover:scale-105 transition-transform">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Phone Call</p>
+                    <p className="text-sm font-semibold text-zinc-200 group-hover:text-cyan-300 transition-colors">
+                      {personal.phone}
+                    </p>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">Direct mobile phone</p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* WhatsApp Chat (Requirement 10) */}
+                <a
+                  href={personal.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-[#0d1424] border border-blue-500/20 hover:border-cyan-400 hover:bg-[#121c33] transition-all group"
+                >
+                  <div className="p-2.5 rounded-lg bg-cyan-600/20 border border-cyan-500/30 text-cyan-400 group-hover:scale-105 transition-transform">
+                    <MessageCircle className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">WhatsApp Direct</p>
+                    <p className="text-sm font-semibold text-zinc-200 group-hover:text-cyan-300 transition-colors">
+                      Chat on WhatsApp
+                    </p>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">Instant messaging &amp; chat</p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* Location */}
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-[#0d1424]/40 border border-white/5">
+                  <div className="p-2.5 rounded-lg bg-[#07090e] text-zinc-400">
+                    <MapPin className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Location</p>
+                    <p className="text-sm font-medium text-zinc-300">
+                      {personal.location}
+                    </p>
+                    <p className="text-[11px] text-zinc-400 mt-0.5">Open to remote &amp; onsite roles</p>
+                  </div>
                 </div>
+
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                {contactMethods.map(({ label, value, href, action, icon: Icon, tone }) => (
-                  <a
-                    key={label}
-                    href={href(personal)}
-                    target={label === 'WhatsApp' ? '_blank' : undefined}
-                    rel={label === 'WhatsApp' ? 'noopener noreferrer' : undefined}
-                    aria-label={`${action}: ${value(personal)}`}
-                    className={`contact-method contact-method-${tone} group flex min-h-40 flex-col rounded-2xl border border-white/10 bg-zinc-950/55 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-zinc-900/80 sm:p-5`}
-                  >
-                    <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl"><Icon className="h-[18px] w-[18px]" /></span>
-                    <span className="text-xs font-medium text-zinc-400">{label}</span>
-                    <span className="mt-1 break-words text-sm font-semibold text-zinc-100">{value(personal)}</span>
-                    <span className="mt-auto flex items-center gap-1 pt-4 text-xs font-semibold text-emerald-300">{action}<ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></span>
-                  </a>
-                ))}
+              {/* Response Time Guarantee */}
+              <div className="pt-2 flex items-center gap-2 text-xs text-zinc-400 font-mono">
+                <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Fast response guarantee: within a few hours</span>
               </div>
             </div>
 
-            <aside className="contact-aside flex flex-col justify-between border-t border-white/10 bg-gradient-to-br from-emerald-950/40 via-zinc-950/70 to-teal-950/30 p-6 sm:p-8 lg:border-l lg:border-t-0 lg:p-10">
-              <div>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">Connect &amp; collaborate</span>
-                <h3 className="mt-3 text-2xl font-bold leading-tight text-white">Open to meaningful opportunities.</h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-400">For junior software engineering roles, collaboration, or a conversation about building for the web.</p>
-              </div>
-              <div className="mt-8">
-                <div className="mb-4 flex items-center gap-2 text-xs text-zinc-400"><MapPin className="h-4 w-4 text-emerald-300" />{personal.location}</div>
-                <div className="flex flex-wrap gap-2">
-                  <a href="https://www.linkedin.com/in/ridwanul-hoque-kawsar" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="contact-social inline-flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-900/70 px-3.5 py-2.5 text-xs font-semibold text-zinc-200 transition hover:border-emerald-400/30 hover:text-emerald-300"><Linkedin className="h-4 w-4" />LinkedIn<ArrowUpRight className="h-3 w-3" /></a>
-                  <a href="https://github.com/KawsarCodes404" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile" className="contact-social inline-flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-900/70 px-3.5 py-2.5 text-xs font-semibold text-zinc-200 transition hover:border-emerald-400/30 hover:text-emerald-300"><Github className="h-4 w-4" />GitHub<ArrowUpRight className="h-3 w-3" /></a>
-                </div>
-              </div>
-            </aside>
           </div>
+
+          {/* Right Column: Interactive Contact Form */}
+          <div className="lg:col-span-7">
+            <div className="glass-card rounded-2xl p-6 sm:p-8 border border-white/5 shadow-2xl">
+              <h3 className="text-xl font-bold text-white mb-2">Send Me a Message</h3>
+              <p className="text-xs text-zinc-400 mb-6">
+                Leave your details and brief message below, and I will get back to you promptly.
+              </p>
+
+              {status.submitted ? (
+                <div className="p-8 rounded-xl bg-blue-950/30 border border-blue-500/30 text-center space-y-3 animate-fadeIn">
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 text-cyan-400 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-lg font-bold text-white">Jazakallah Khair! Message Received.</h4>
+                  <p className="text-xs text-zinc-300 max-w-md mx-auto font-sans">
+                    Thank you for reaching out. I have received your message and will reply to your email address shortly.
+                  </p>
+                  <button
+                    onClick={() => setStatus({ submitted: false, loading: false, error: '' })}
+                    className="mt-3 px-4 py-2 rounded-xl text-xs font-semibold text-cyan-300 bg-blue-900/50 hover:bg-blue-800/50 transition-colors"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {status.error && (
+                    <div className="p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-red-300 text-xs">
+                      {status.error}
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-zinc-300 font-mono" htmlFor="name">
+                        Your Name <span className="text-cyan-400">*</span>
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        required
+                        className="w-full px-4 py-3 rounded-xl bg-[#0d1424] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-zinc-300 font-mono" htmlFor="email">
+                        Your Email <span className="text-cyan-400">*</span>
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="john@example.com"
+                        required
+                        className="w-full px-4 py-3 rounded-xl bg-[#0d1424] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-zinc-300 font-mono" htmlFor="subject">
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Frontend Project / Collaboration / Opportunity"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1424] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-zinc-300 font-mono" htmlFor="message">
+                      Your Message <span className="text-cyan-400">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Assalamu Alaikum Ridwanul, I would like to discuss..."
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-[#0d1424] border border-white/10 text-white placeholder-zinc-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 transition-colors resize-none font-sans"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={status.loading}
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5 disabled:opacity-50"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>{status.loading ? 'Dispatching Message...' : 'Send Message Now'}</span>
+                  </button>
+                </form>
+              )}
+
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
   );

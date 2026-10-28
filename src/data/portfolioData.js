@@ -19,7 +19,7 @@ export const portfolioData = {
 
   socials: [
     { name: "GitHub", url: "https://github.com/KawsarCodes404", handle: "@KawsarCodes404", icon: "Github", color: "hover:text-white hover:border-zinc-500" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/ridwanul-hoque-kawsar", handle: "ridwanul-hoque-kawsar", icon: "Linkedin", color: "hover:text-teal-400 hover:border-teal-500/50" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/ridwanul-hoque-kawsar", handle: "ridwanul-hoque-kawsar", icon: "Linkedin", color: "hover:text-cyan-400 hover:border-cyan-500/50" },
     { name: "CodeChef", url: "https://www.codechef.com/users/ridwanul_hoque", handle: "2-star coder", icon: "CodeChef", color: "hover:text-amber-400 hover:border-amber-500/50" },
     { name: "Codeforces", url: "https://codeforces.com/profile/Ridwanul_Hoque_Kawsar_2", handle: "Ridwanul_Hoque_Kawsar_2", icon: "Codeforces", color: "hover:text-blue-400 hover:border-blue-500/50" },
   ],

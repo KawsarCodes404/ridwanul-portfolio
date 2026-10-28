@@ -38,7 +38,7 @@ export default function ProjectModal({ project, onClose }) {
         {/* Sticky Modal Top Bar */}
         <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#0d0d14]/95 backdrop-blur-md border-b border-white/10">
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold text-teal-300 bg-teal-950/60 border border-teal-500/30">
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-bold text-cyan-300 bg-cyan-950/60 border border-cyan-500/30">
               {project.category}
             </span>
             <span className="text-xs text-zinc-400 font-mono hidden sm:inline">
@@ -62,7 +62,7 @@ export default function ProjectModal({ project, onClose }) {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               {project.title}
             </h2>
-            <p className="text-xs text-emerald-400 font-mono mt-1">
+            <p className="text-xs text-blue-400 font-mono mt-1">
               Badge: <span className="text-zinc-200 font-semibold">{project.badge}</span>
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 shadow-md shadow-blue-600/30 transition-all hover:-translate-y-0.5"
               >
                 <span>Live Project Demo</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -107,14 +107,14 @@ export default function ProjectModal({ project, onClose }) {
           {/* Main Technology Stack (Requirement 9) */}
           <div className="space-y-2.5 pt-2 border-t border-white/5">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-zinc-300 font-mono">
-              <Layers className="w-4 h-4 text-teal-400" />
+              <Layers className="w-4 h-4 text-cyan-400" />
               <span>Main Technology Stack Used:</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {project.mainTechStack.map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-lg bg-zinc-900 border border-teal-500/20 text-teal-300 text-xs font-mono font-medium shadow-sm"
+                  className="px-3 py-1 rounded-lg bg-zinc-900 border border-cyan-500/20 text-cyan-300 text-xs font-mono font-medium shadow-sm"
                 >
                   {tech}
                 </span>
@@ -141,7 +141,7 @@ export default function ProjectModal({ project, onClose }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {project.keyFeatures.map((feat, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs text-zinc-300">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -161,9 +161,9 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           {/* Potential Improvements & Future Plans (Requirement 9) */}
-          <div className="rounded-xl p-5 bg-emerald-950/25 border border-emerald-500/30 space-y-2">
-            <div className="flex items-center gap-2 text-emerald-300 text-xs font-bold font-mono uppercase tracking-wider">
-              <Rocket className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="rounded-xl p-5 bg-blue-950/25 border border-blue-500/30 space-y-2">
+            <div className="flex items-center gap-2 text-blue-300 text-xs font-bold font-mono uppercase tracking-wider">
+              <Rocket className="w-4 h-4 text-blue-400 shrink-0" />
               <span>Potential Improvements &amp; Future Plans:</span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-200 leading-relaxed font-sans">
