@@ -1,0 +1,99 @@
+import React from 'react';
+import { Briefcase, Calendar, CheckCircle2, Building2, MapPin } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
+
+export default function Experience() {
+  const { experience } = portfolioData;
+
+  return (
+    <section id="experience" className="py-24 relative overflow-hidden bg-zinc-950/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
+            <Briefcase className="w-3.5 h-3.5" />
+            <span>CAREER MILESTONES</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Relevant Experience
+          </h2>
+          <p className="mt-3 text-base text-zinc-400">
+            Professional roles, freelance engineering, and open-source contributions delivering tangible value.
+          </p>
+        </div>
+
+        {/* Experience Timeline */}
+        <div className="max-w-4xl mx-auto relative">
+          
+          {/* Vertical Timeline Guide Line */}
+          <div className="hidden sm:block absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-indigo-500 via-cyan-500 to-transparent" />
+
+          <div className="space-y-8">
+            {experience.map((item, idx) => (
+              <div key={idx} className="relative sm:pl-20 group">
+                
+                {/* Timeline Dot Icon */}
+                <div className="hidden sm:flex absolute left-5 top-5 -translate-x-1/2 w-7 h-7 rounded-full bg-zinc-900 border-2 border-indigo-500 items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-110 group-hover:border-cyan-400 transition-all">
+                  <div className="w-2 h-2 rounded-full bg-indigo-400 group-hover:bg-cyan-300" />
+                </div>
+
+                <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/10 hover:border-emerald-500/30 transition-all duration-300">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                        {item.role}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-zinc-300 font-medium">
+                        <span className="flex items-center gap-1 text-indigo-400">
+                          <Building2 className="w-3.5 h-3.5" />
+                          {item.company}
+                        </span>
+                        <span className="text-zinc-600">•</span>
+                        <span className="text-zinc-400">{item.type}</span>
+                      </div>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono text-zinc-300 bg-zinc-900 border border-white/5 self-start">
+                      <Calendar className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>{item.duration}</span>
+                    </div>
+                  </div>
+
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+
+                  {/* Bullet achievements */}
+                  <div className="space-y-2 mb-5">
+                    {item.achievements.map((ach, aIdx) => (
+                      <div key={aIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <span>{ach}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tech stack pills */}
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                    {item.skillsUsed.map((sk, sIdx) => (
+                      <span
+                        key={sIdx}
+                        className="px-2.5 py-1 rounded-lg bg-zinc-900 text-zinc-300 text-[11px] font-mono border border-white/5"
+                      >
+                        {sk}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}

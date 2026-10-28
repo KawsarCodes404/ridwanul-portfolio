@@ -1,0 +1,266 @@
+export const portfolioData = {
+  personal: {
+    name: "Ridwanul Hoque Kawsar",
+    title: "Frontend & Full-Stack Developer",
+    secondaryTitle: "Algorithmic Problem Solver | Clean Code Enthusiast",
+    bio: "Passionate developer dedicated to building responsive, accessible, and high-performance digital experiences. Combining deep algorithmic problem-solving rigor with polished modern UI engineering.",
+    avatar: "/profile.jpg",
+    location: "Chittagong / Dhaka, Bangladesh",
+    email: "ridwanul.kawsar.dev@gmail.com",
+    phone: "+880 1836-819404",
+    whatsapp: "https://wa.me/8801836819404",
+    resumeUrl: "/Ridwanul_Hoque_Kawsar_Resume.pdf",
+    availability: "Available for Full-time Roles & High-Impact Projects",
+    statusBadge: "Open to Work",
+  },
+
+  socials: [
+    {
+      name: "GitHub",
+      url: "https://github.com/KawsarCodes404",
+      handle: "@KawsarCodes404",
+      icon: "Github",
+      color: "hover:text-white hover:border-zinc-500",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/ridwanul-hoque-kawsar",
+      handle: "in/ridwanul-hoque-kawsar",
+      icon: "Linkedin",
+      color: "hover:text-[#0a66c2] hover:border-[#0a66c2]/50",
+    },
+    {
+      name: "Twitter / X",
+      url: "https://twitter.com",
+      handle: "@KawsarCodes",
+      icon: "Twitter",
+      color: "hover:text-cyan-400 hover:border-cyan-500/50",
+    },
+    {
+      name: "Facebook",
+      url: "https://facebook.com",
+      handle: "Ridwanul Hoque",
+      icon: "Facebook",
+      color: "hover:text-blue-500 hover:border-blue-500/50",
+    },
+  ],
+
+  stats: [
+    { label: "CP Problems Solved", value: "500+", suffix: "Online Judges" },
+    { label: "Completed Projects", value: "12+", suffix: "Full-Stack & Web" },
+    { label: "Code Repositories", value: "20+", suffix: "GitHub Public" },
+    { label: "Dedication & Quality", value: "100%", suffix: "Clean Code" },
+  ],
+
+  about: {
+    journey: `My journey into programming began with competitive programming and algorithmic problem solving. Solving complex problems on Codeforces and CodeChef taught me how to think with computational precision, optimize time and space complexity, and build resilient logic from the ground up.
+
+As I expanded into modern web engineering, I discovered a profound passion for translating algorithmic rigor into fluid, pixel-perfect user interfaces and scalable full-stack applications. Today, I build high-performance web applications using React, modern JavaScript, and Tailwind CSS, always prioritizing clean architecture and great developer experience.`,
+    
+    enjoyment: `I truly enjoy crafting intuitive interfaces that feel alive, responsive, and blazing fast. Whether it is fine-tuning CSS animations, architecting state-management patterns, or engineering resilient RESTful endpoints, I love the intersection of robust backend logic and visually engaging frontend aesthetics.`,
+
+    hobbies: [
+      {
+        title: "Competitive Programming",
+        desc: "Regularly tackling algorithmic puzzles on Codeforces & CodeChef to sharpen problem-solving agility.",
+        icon: "Terminal",
+      },
+      {
+        title: "Cricket & Sports",
+        desc: "Active cricket enthusiast who loves team coordination, strategy, and staying energized outdoors.",
+        icon: "Activity",
+      },
+      {
+        title: "Exploring Tech & Open Source",
+        desc: "Constantly testing new web frameworks, UI libraries, and contributing to open-source developer tools.",
+        icon: "Compass",
+      },
+      {
+        title: "Creative Arts & Painting",
+        desc: "Appreciating aesthetics, visual balance, and harmonious color theory in digital and traditional art.",
+        icon: "Palette",
+      },
+    ],
+
+    personalityTraits: [
+      "Analytical & Detail-Oriented",
+      "Perseverant Problem Solver",
+      "Collaborative Team Player",
+      "Continuous Lifelong Learner",
+    ],
+  },
+
+  skills: {
+    frontend: [
+      { name: "React.js", level: 90, icon: "Atom" },
+      { name: "JavaScript (ES6+)", level: 92, icon: "FileCode2" },
+      { name: "Tailwind CSS", level: 95, icon: "Palette" },
+      { name: "HTML5 / Semantic Web", level: 98, icon: "Code2" },
+      { name: "CSS3 / Modern Flex & Grid", level: 95, icon: "Layout" },
+      { name: "Next.js", level: 80, icon: "Zap" },
+      { name: "Bootstrap 5", level: 88, icon: "Boxes" },
+    ],
+    backend: [
+      { name: "Node.js", level: 82, icon: "Server" },
+      { name: "Express.js", level: 85, icon: "Cpu" },
+      { name: "MongoDB / Mongoose", level: 80, icon: "Database" },
+      { name: "RESTful API Design", level: 90, icon: "Network" },
+      { name: "Firebase Auth & Store", level: 82, icon: "Flame" },
+      { name: "JWT & Security", level: 84, icon: "ShieldCheck" },
+    ],
+    tools: [
+      { name: "C / C++ (Algorithms)", level: 88, icon: "Binary" },
+      { name: "Data Structures & Algos", level: 85, icon: "Workflow" },
+      { name: "Git & Version Control", level: 92, icon: "GitBranch" },
+      { name: "GitHub & CI/CD", level: 90, icon: "Github" },
+      { name: "VS Code & Debugging", level: 95, icon: "TerminalSquare" },
+      { name: "Figma (UI Implementation)", level: 80, icon: "Figma" },
+      { name: "Postman API Testing", level: 88, icon: "Send" },
+    ],
+  },
+
+  education: [
+    {
+      degree: "B.Sc. in Computer Science & Engineering",
+      institution: "Premier University / University Level",
+      duration: "2023 - 2027 (Ongoing)",
+      status: "In Progress",
+      grade: "CGPA: 3.80 / 4.00 (Consistent Honors)",
+      description: "Focused on core computer science foundations, algorithm design, software architecture, and advanced web engineering. Active member of the university programming club and competitive coding team.",
+      highlights: [
+        "Data Structures & Algorithmic Analysis",
+        "Object Oriented Programming (OOP) in C++ & Java",
+        "Database Management Systems & Relational Modeling",
+        "Web Systems Engineering & Operating Systems",
+      ],
+    },
+    {
+      degree: "Higher Secondary Certificate (HSC)",
+      institution: "Government City College / Reputed College",
+      duration: "2020 - 2022",
+      status: "Graduated",
+      grade: "GPA: 5.00 / 5.00 (Golden A+)",
+      description: "Completed Higher Secondary education in Science discipline with stellar marks in Mathematics, Physics, and Information & Communication Technology.",
+      highlights: [
+        "Advanced Mathematics & Calculus",
+        "Physics & Analytical Mechanics",
+        "Information & Communication Technology (ICT)",
+      ],
+    },
+  ],
+
+  experience: [
+    {
+      role: "Frontend Developer (Freelance & Open Source)",
+      company: "Self-Employed / Remote",
+      duration: "2023 - Present",
+      type: "Remote / Contract",
+      description: "Architecting modern, responsive frontend web applications and landing pages for clients and open-source tech initiatives.",
+      achievements: [
+        "Engineered over 10+ custom web interfaces with strict adherence to responsive design, accessibility (a11y), and fast load times (<1.5s).",
+        "Constructed interactive conference and product portals including DevConf-2026, receiving high acclaim for fluid mobile responsiveness.",
+        "Collaborated with diverse teams using Git flow, conducting structured code reviews and component optimization.",
+      ],
+      skillsUsed: ["React", "Tailwind CSS", "JavaScript ES6+", "HTML5/CSS3", "Git"],
+    },
+    {
+      role: "Competitive Programming Mentor & Problem Solver",
+      company: "Coding Community / Campus Lead",
+      duration: "2023 - 2024",
+      type: "Part-time / Academic",
+      description: "Mentoring junior engineering students in algorithmic logic, binary search, graph theory, and dynamic programming techniques.",
+      achievements: [
+        "Solved 500+ competitive programming challenges across Codeforces, CodeChef, and HackerRank.",
+        "Organized mock programming contests and authored explanatory solution walkthroughs in C++.",
+        "Enhanced runtime efficiency of student algorithms by demonstrating algorithmic time-complexity trade-offs.",
+      ],
+      skillsUsed: ["C++", "Data Structures", "Algorithms", "Mathematics", "Codeforces"],
+    },
+  ],
+
+  projects: [
+    {
+      id: "devconf-2026",
+      title: "DevConf 2026 - Developer Conference Platform",
+      category: "Frontend Web Application",
+      badge: "Featured Event Platform",
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+      shortDesc: "A high-impact developer conference portal with keynote schedules, speaker spotlights, tiered ticketing, and interactive registration.",
+      fullDesc: "DevConf-2026 is a modern, responsive conference landing platform tailored for tech summits and developer gatherings. It offers seamless navigation through multiple event tracks, dynamic speaker bios, ticket pricing tiers, and an intuitive attendee registration interface designed for maximum conversion.",
+      mainTechStack: [
+        "HTML5 Semantic",
+        "CSS3 Modern Grid & Flexbox",
+        "JavaScript (ES6+)",
+        "Mobile-First Responsive",
+        "CSS Custom Properties",
+      ],
+      liveLink: "https://kawsarcodes404.github.io/DevConf-2026/",
+      clientGithub: "https://github.com/KawsarCodes404/DevConf-2026",
+      challengesFaced: "Designing a responsive, multi-day schedule matrix that adapts seamlessly from ultra-wide desktop monitors down to 320px mobile viewports without horizontal overflowing or awkward text wrapping. Additionally, ensuring high visual performance with high-resolution speaker imagery required modern aspect-ratio CSS rules and lazy-loading optimizations.",
+      futurePlans: "1. Integrate dynamic backend ticketing with Stripe and SSLCommerz payment gateways. 2. Implement real-time seat availability countdowns. 3. Add an interactive WebGL 3D preview of the conference venue and live stage streaming integration.",
+      keyFeatures: [
+        "Fully responsive modern layout across all viewports",
+        "Interactive schedule table with track filters",
+        "Dynamic ticket tier cards with feature checklists",
+        "Speaker profile spotlights with social links",
+        "Validated event registration form",
+      ],
+    },
+    {
+      id: "shopsphere-ecommerce",
+      title: "ShopSphere - Modern E-Commerce Hub",
+      category: "Full-Stack Web Application",
+      badge: "MERN Stack E-Commerce",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80",
+      shortDesc: "A sleek, feature-packed digital shopping storefront with dynamic catalog filtering, real-time cart state, and smooth checkout flow.",
+      fullDesc: "ShopSphere is an enterprise-grade digital marketplace client designed with lightning-fast performance, optimistic UI updates, multi-criteria product filtering, and persistent shopping cart states across sessions.",
+      mainTechStack: [
+        "React.js",
+        "Tailwind CSS",
+        "Context API & Hooks",
+        "Node.js & Express",
+        "MongoDB",
+        "RESTful API",
+      ],
+      liveLink: "https://shopsphere-demo.vercel.app",
+      clientGithub: "https://github.com/KawsarCodes404",
+      challengesFaced: "Synchronizing cart state across browser tabs and localStorage without race conditions while ensuring optimistic UI updates for instant 'Add to Cart' user satisfaction. Implementing complex multi-attribute filtering (category, price slider, in-stock status, customer ratings) while maintaining 60 FPS scrolling performance.",
+      futurePlans: "1. Introduce AI-powered personal product recommendations based on browsing habits. 2. Integrate an automated order tracking timeline with real-time status updates. 3. Build an administrative analytics dashboard with sales revenue graphs and inventory management.",
+      keyFeatures: [
+        "Dynamic category filtering & instant keyword search",
+        "Synchronized shopping cart with drawer preview",
+        "Optimistic UI updates for high responsiveness",
+        "Secure customer checkout & mock payment modal",
+        "Mobile-first responsive drawer & navigation",
+      ],
+    },
+    {
+      id: "algotrack-visualizer",
+      title: "AlgoTrack - CP Analytics & Visualizer",
+      category: "Developer Tool & Analytics",
+      badge: "Algorithmic Platform",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      shortDesc: "An interactive analytics dashboard tracking competitive programming progress, contest rating growth, and problem topic distribution.",
+      fullDesc: "AlgoTrack bridges the gap between competitive programmers and structured skill progression. By integrating with public judge APIs (Codeforces), it visualizes problem breakdown by tags (DP, Graphs, Greedy, Math), rating milestones, and daily submission consistency heatmaps.",
+      mainTechStack: [
+        "React.js",
+        "Tailwind CSS",
+        "Codeforces REST API",
+        "SVG Data Visualizations",
+        "Lucide React",
+        "Local Cache Storage",
+      ],
+      liveLink: "https://algotrack-demo.vercel.app",
+      clientGithub: "https://github.com/KawsarCodes404",
+      challengesFaced: "Managing external judge API rate limits and handling asynchronous data streams of thousands of historical submissions. Converting raw verdict logs into intuitive graphical charts and heatmaps without causing browser thread stutters.",
+      futurePlans: "1. Incorporate CodeChef and LeetCode API unified profiles into a single global score. 2. Add an automated contest reminder system with Google Calendar sync. 3. Build an algorithm flashcard system for quick revision before official rounds.",
+      keyFeatures: [
+        "Interactive rating progression chart with division color codes",
+        "Topic mastery radar (Dynamic Programming, Trees, Greedy)",
+        "Daily submission streak & activity heatmap",
+        "Contest performance breakdown and rank visualizer",
+        "Search any Codeforces handle for instant profile analysis",
+      ],
+    },
+  ],
+};
