@@ -69,8 +69,8 @@
 
   /* Seamless image blend fade mask */
   .hero-photo-blend {
-    mask-image: radial-gradient(ellipse 72% 104% at 50% 44%, #000 42%, rgba(0, 0, 0, .88) 57%, transparent 82%);
-    -webkit-mask-image: radial-gradient(ellipse 72% 104% at 50% 44%, #000 42%, rgba(0, 0, 0, .88) 57%, transparent 82%);
+    mask-image: radial-gradient(ellipse 68% 96% at 50% 44%, #000 34%, rgba(0, 0, 0, .88) 54%, transparent 78%);
+    -webkit-mask-image: radial-gradient(ellipse 68% 96% at 50% 44%, #000 34%, rgba(0, 0, 0, .88) 54%, transparent 78%);
   }
 
   .hero-bottom-fade {
