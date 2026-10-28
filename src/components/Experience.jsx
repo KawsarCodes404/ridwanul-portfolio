@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, CheckCircle2, Award, Terminal, Code2, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, Award, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -53,20 +53,10 @@ export default function Experience() {
 
         {/* Experience Timeline */}
         <div className="max-w-4xl mx-auto relative">
-          
-          {/* Vertical Timeline Guide Line */}
-          <div className="hidden sm:block absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-500 via-cyan-400 to-transparent" />
-
           <div className="space-y-8">
             {experience.map((item, idx) => (
-              <div key={idx} className="relative sm:pl-20 group">
-                
-                {/* Timeline Dot Icon */}
-                <div className="hidden sm:flex absolute left-5 top-5 -translate-x-1/2 w-7 h-7 rounded-full bg-[#07090e] border-2 border-blue-500 items-center justify-center shadow-lg shadow-blue-500/20 group-hover:scale-110 group-hover:border-cyan-400 transition-all">
-                  <div className="w-2 h-2 rounded-full bg-blue-400 group-hover:bg-cyan-300" />
-                </div>
-
-                <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/5 hover:border-blue-500/30 transition-all duration-300">
+              <div key={idx} className="group">
+                <div className="glass-card relative overflow-hidden rounded-3xl border border-white/[0.08] border-l-2 border-l-sky-400/70 p-6 shadow-[0_24px_70px_-52px_rgba(37,99,235,.45)] transition-all duration-300 hover:border-sky-300/25 hover:border-l-cyan-300 sm:p-8">
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-3">
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
