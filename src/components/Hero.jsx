@@ -158,36 +158,10 @@ export default function Hero({ onOpenResume }) {
                 <img
                   src={personal.avatar}
                   alt={personal.name}
-                  className="w-full h-full object-cover object-top scale-100 hover:scale-105 transition-transform duration-700 ease-out"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80";
-                  }}
+                  className="hero-photo-blend w-full h-full object-cover object-top scale-100 hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
-                {/* Radial edge blend: softly dissolves the edges into the theme */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07090e] via-transparent to-transparent opacity-90 pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#07090e]/40 via-transparent to-[#07090e] pointer-events-none" />
               </div>
-
-              {/* Floating Achievement Pill 1: Top Left */}
-              <div className="absolute top-4 -left-3 sm:-left-6 bg-[#0a0f1d]/90 backdrop-blur-md border border-amber-500/30 rounded-xl px-3.5 py-2 shadow-2xl shadow-black/80 flex items-center gap-2 animate-float">
-                <Award className="w-4 h-4 text-amber-400" />
-                <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white font-mono">2★ CodeChef</span>
-                  <span className="block text-[9px] text-amber-400 font-mono">ridwanul_hoque</span>
-                </div>
-              </div>
-
-              {/* Floating Achievement Pill 2: Bottom Right */}
-              <div className="absolute bottom-6 -right-3 sm:-right-6 bg-[#0a0f1d]/90 backdrop-blur-md border border-cyan-500/30 rounded-xl px-3.5 py-2 shadow-2xl shadow-black/80 flex items-center gap-2 animate-float" style={{ animationDelay: '2s' }}>
-                <Terminal className="w-4 h-4 text-cyan-400" />
-                <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white font-mono">600+ Solved</span>
-                  <span className="block text-[9px] text-cyan-400 font-mono">Online Judges</span>
-                </div>
-              </div>
-
             </div>
 
           </div>

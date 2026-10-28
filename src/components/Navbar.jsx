@@ -65,11 +65,11 @@ export default function Navbar({ onOpenResume }) {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-bold text-white tracking-tight text-base group-hover:text-blue-400 transition-colors">
-                Ridwanul Hoque
+              <span className="font-extrabold text-white tracking-tight text-base sm:text-lg group-hover:text-blue-300 transition-colors">
+                Ridwanul Hoque Kawsar
               </span>
-              <span className="text-[10px] font-mono text-cyan-400 tracking-wider uppercase -mt-0.5">
-                Full-Stack &amp; CP
+              <span className="text-[10px] font-mono text-cyan-400 tracking-wide -mt-0.5">
+                Full-Stack Web Developer
               </span>
             </div>
           </a>
