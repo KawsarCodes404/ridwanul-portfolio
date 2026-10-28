@@ -48,9 +48,10 @@ export const portfolioData = {
   },
 
   skills: {
-    frontend: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-    backend: ["Node.js", "MongoDB", "Better Auth", "REST APIs", "DaisyUI"],
-    tools: ["C++", "Data Structures & Algorithms", "Git", "GitHub", "Vite", "Figma"],
+    frontend: ["React", "Next.js", "Tailwind CSS", "DaisyUI", "HTML5", "CSS3"],
+    backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Better Auth", "REST APIs", "FitLog API"],
+    languages: ["JavaScript", "TypeScript", "C++", "Data Structures & Algorithms"],
+    workflow: ["Git", "GitHub", "Vite", "Figma", "React-Toastify", "localStorage", "JSON"],
   },
 
   education: [
@@ -63,12 +64,12 @@ export const portfolioData = {
       highlights: ["Frontend development", "Hands-on project work"],
     },
     {
-      degree: "Course completion",
+      degree: "Data Structure and Algorithm",
       institution: "Phitron",
-      duration: "Completed",
+      duration: "Mar 2025 – Feb 2026",
       status: "Completed",
-      description: "Completed a course at Phitron and continued developing problem-solving and programming fundamentals through practice.",
-      highlights: ["Programming fundamentals", "Continued independent practice"],
+      description: "Completed Phitron’s Data Structure and Algorithm track with Grade A, earning recognition for outstanding results.",
+      highlights: ["C++", "Problem solving", "Competitive programming", "Analytical skills", "Decision-making", "Data structures", "Algorithms", "Critical thinking"],
     },
   ],
 

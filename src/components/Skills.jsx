@@ -1,170 +1,72 @@
 import React, { useState } from 'react';
-import { 
-  Code2, 
-  Layers, 
-  Cpu, 
-  Terminal, 
-  Database, 
-  Wrench, 
-  CheckCircle2, 
-  Sparkles 
-} from 'lucide-react';
+import { Braces, Code2, Database, Layers3, Sparkles, Terminal } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+
+const groups = [
+  { id: 'frontend', title: 'Frontend', subtitle: 'Interfaces & styling', icon: Layers3, skills: (s) => s.frontend },
+  { id: 'backend', title: 'Backend & data', subtitle: 'Server, APIs & persistence', icon: Database, skills: (s) => s.backend },
+  { id: 'languages', title: 'Languages & CS', subtitle: 'Programming fundamentals', icon: Braces, skills: (s) => s.languages },
+  { id: 'workflow', title: 'Tools & workflow', subtitle: 'Building, design & version control', icon: Terminal, skills: (s) => s.workflow },
+];
 
 export default function Skills() {
   const { skills } = portfolioData;
-  const [activeTab, setActiveTab] = useState('all');
-
-  const categories = [
-    { id: 'all', label: 'All Technologies', icon: Layers },
-    { id: 'frontend', label: 'Frontend Development', icon: Code2 },
-    { id: 'backend', label: 'Backend & Database', icon: Database },
-    { id: 'tools', label: 'Tools & Algorithms', icon: Wrench },
-  ];
-
-  const getSkillsToDisplay = () => {
-    if (activeTab === 'frontend') return [{ category: 'Frontend Ecosystem', items: skills.frontend, accent: 'cyan' }];
-    if (activeTab === 'backend') return [{ category: 'Backend & Architecture', items: skills.backend, accent: 'sapphire' }];
-    if (activeTab === 'tools') return [{ category: 'Tools & Problem Solving', items: skills.tools, accent: 'indigo' }];
-    
-    return [
-      { category: 'Frontend Ecosystem', items: skills.frontend, accent: 'cyan' },
-      { category: 'Backend & Database', items: skills.backend, accent: 'sapphire' },
-      { category: 'Tools, Version Control & CS', items: skills.tools, accent: 'indigo' },
-    ];
-  };
-
-  const getAccentColors = (accent) => {
-    switch (accent) {
-      case 'cyan':
-        return {
-          bar: 'from-blue-500 to-cyan-400',
-          badge: 'text-cyan-400 bg-cyan-950/40 border-cyan-500/20',
-          hover: 'hover:border-cyan-500/40',
-        };
-      case 'sapphire':
-        return {
-          bar: 'from-blue-600 to-indigo-500',
-          badge: 'text-blue-300 bg-blue-950/40 border-blue-500/20',
-          hover: 'hover:border-blue-500/40',
-        };
-      case 'indigo':
-      default:
-        return {
-          bar: 'from-indigo-500 to-cyan-500',
-          badge: 'text-indigo-300 bg-indigo-950/40 border-indigo-500/20',
-          hover: 'hover:border-indigo-500/40',
-        };
-    }
-  };
+  const [active, setActive] = useState('all');
+  const shown = active === 'all' ? groups : groups.filter((group) => group.id === active);
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#07090e]/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-cyan-400 text-xs font-mono mb-3">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>TECHNICAL CAPABILITIES</span>
+    <section id="skills" className="relative overflow-hidden py-24 sm:py-28">
+      <div className="pointer-events-none absolute left-1/2 top-20 h-80 w-[min(80vw,900px)] -translate-x-1/2 rounded-full bg-blue-500/[0.06] blur-[100px]" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <header className="mx-auto mb-12 max-w-2xl text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/[0.07] px-3 py-1.5 font-mono text-[11px] tracking-[0.16em] text-sky-300">
+            <Sparkles className="h-3.5 w-3.5" /> TECH STACK
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Skills &amp; Competencies
-          </h2>
-          <p className="mt-3 text-base text-zinc-400">
-            A comprehensive overview of my technical stack, categorized by domain, proficiency, and engineering focus.
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Tools I build with</h2>
+          <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
+            Technologies from my projects, programming practice, and current web development studies.
           </p>
+        </header>
+
+        <div className="mb-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Filter technologies">
+          {[{ id: 'all', label: 'Everything', icon: Code2 }, ...groups.map(({ id, title, icon }) => ({ id, label: title, icon }))].map(({ id, label, icon: Icon }) => (
+            <button key={id} type="button" role="tab" aria-selected={active === id} onClick={() => setActive(id)}
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-xs font-semibold transition-all duration-200 sm:text-sm ${active === id ? 'border-sky-300/30 bg-gradient-to-r from-blue-600/90 to-cyan-500/80 text-white shadow-lg shadow-blue-950/50' : 'border-white/[0.08] bg-white/[0.025] text-slate-400 hover:border-sky-300/25 hover:bg-white/[0.05] hover:text-white'}`}>
+              <Icon className="h-4 w-4" />{label}
+            </button>
+          ))}
         </div>
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {categories.map((cat) => {
-            const Icon = cat.icon;
-            const isActive = activeTab === cat.id;
+        <div className="space-y-8">
+          {shown.map(({ id, title, subtitle, icon: Icon, skills: getSkills }) => {
+            const items = getSkills(skills);
             return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-600/30 border border-blue-400/30'
-                    : 'bg-[#0d1424] text-zinc-400 hover:text-zinc-200 border border-white/5 hover:border-blue-500/30'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{cat.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Skills Cards Grid */}
-        <div className="space-y-10">
-          {getSkillsToDisplay().map((section, sIdx) => {
-            const colorScheme = getAccentColors(section.accent);
-            return (
-              <div key={sIdx} className="space-y-4">
-                <div className="flex items-center gap-2 border-b border-white/5 pb-2">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                  <h3 className="text-base font-bold text-zinc-200 tracking-wide">
-                    {section.category}
-                  </h3>
-                  <span className="text-xs text-zinc-400 font-mono">
-                    ({section.items.length} Technologies)
-                  </span>
+              <section key={id} aria-label={title} className="rounded-3xl border border-white/[0.08] bg-slate-950/35 p-5 shadow-[0_20px_70px_-45px_rgba(37,99,235,.35)] backdrop-blur-sm sm:p-7">
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-sky-300/15 bg-gradient-to-br from-blue-500/15 to-cyan-400/[0.06] text-sky-300"><Icon className="h-5 w-5" /></span>
+                  <div><h3 className="text-base font-bold text-slate-100 sm:text-lg">{title}</h3><p className="mt-0.5 text-xs text-slate-500">{subtitle}</p></div>
+                  <span className="ml-auto rounded-full border border-white/[0.07] px-2.5 py-1 font-mono text-[11px] text-slate-500">{String(items.length).padStart(2, '0')}</span>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {section.items.map((skill, idx) => (
-                    <div
-                      key={idx}
-                      className={`glass-card rounded-xl p-4 border border-white/5 ${colorScheme.hover} transition-all duration-300 group hover:-translate-y-0.5`}
-                    >
-                      <div className="flex items-center justify-between mb-2.5">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-lg bg-[#0d1424] border border-blue-500/20 flex items-center justify-center text-zinc-300 group-hover:text-cyan-300 transition-colors">
-                            <Sparkles className="w-4 h-4 text-cyan-400" />
-                          </div>
-                          <span className="text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">
-                            {skill.name}
-                          </span>
-                        </div>
-                        <span className="text-xs font-mono font-medium text-zinc-400">
-                          {skill.level}%
-                        </span>
-                      </div>
-
-                      {/* Visual Progress Bar */}
-                      <div className="w-full bg-[#0a0f1d] rounded-full h-1.5 overflow-hidden border border-white/5">
-                        <div
-                          className={`bg-gradient-to-r ${colorScheme.bar} h-1.5 rounded-full transition-all duration-700 ease-out`}
-                          style={{ width: `${skill.level}%` }}
-                        />
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                  {items.map((name, index) => (
+                    <div key={name} className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#0b1220]/80 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/25 hover:bg-[#101b2d]">
+                      <div className="absolute inset-x-5 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/0 to-transparent transition-colors group-hover:via-sky-300/60" />
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/[0.045] font-mono text-xs font-bold text-sky-300/90 ring-1 ring-white/[0.07] group-hover:bg-sky-300/10 group-hover:text-sky-200">{name.split(/\s|\.|&/).filter(Boolean).slice(0, 2).map((part) => part[0]).join('').toUpperCase()}</span>
+                        <span className="text-sm font-semibold leading-5 text-slate-300 transition-colors group-hover:text-white">{name}</span>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </section>
             );
           })}
         </div>
 
-        {/* Core Principles Footnote */}
-        <div className="mt-12 glass-card rounded-2xl p-6 border border-white/5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-blue-500/10 text-cyan-400 border border-blue-500/20">
-              <CheckCircle2 className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white">Continuous Growth &amp; Experiential Learning</h4>
-              <p className="text-xs text-zinc-400">Autodidactic mindset: always mastering modern paradigms and algorithmic efficiency.</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 font-mono text-xs text-cyan-400">
-            <span>Stack: Modern • Modular • Performant</span>
-          </div>
+        <div className="mt-8 flex items-start gap-3 rounded-2xl border border-blue-300/10 bg-blue-400/[0.035] p-4 sm:items-center sm:p-5">
+          <span className="mt-0.5 rounded-xl bg-blue-400/10 p-2 text-sky-300 sm:mt-0"><Sparkles className="h-4 w-4" /></span>
+          <p className="text-xs leading-6 text-slate-400 sm:text-sm">Currently expanding my full-stack skills through hands-on projects and the Programming Hero Level 1 course.</p>
         </div>
-
       </div>
     </section>
   );
