@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, FileText, Sun, Moon, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileText, Sun, Moon } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
@@ -55,25 +55,25 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
           {/* Brand Logo - High-End Polished RK Monogram */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-xl p-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl p-1"
           >
             {/* RK Monogram Badge */}
             <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-600 rounded-xl blur-[3px] opacity-70 group-hover:opacity-100 transition duration-300"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-400 to-teal-600 rounded-xl blur-[3px] opacity-70 group-hover:opacity-100 transition duration-300"></div>
               <div className="relative w-10 h-10 rounded-xl bg-gradient-to-b from-[#14141f] to-[#0a0a0f] border border-white/15 flex items-center justify-center shadow-inner">
-                <span className="font-mono font-black text-sm tracking-tighter bg-gradient-to-r from-indigo-300 via-white to-cyan-300 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+                <span className="font-mono font-black text-sm tracking-tighter bg-gradient-to-r from-emerald-300 via-white to-teal-300 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
                   &lt;RK/&gt;
                 </span>
               </div>
             </div>
 
             {/* Developer Identity Text */}
-            <div className="flex flex-col">
-              <span className="font-extrabold text-white tracking-tight text-base group-hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-                Ridwanul Hoque
+            <div className="flex min-w-0 flex-col">
+              <span title="Ridwanul Hoque Kawsar" className="max-w-[138px] sm:max-w-none overflow-hidden text-ellipsis font-extrabold text-white tracking-tight text-[11px] sm:text-sm md:text-base leading-tight group-hover:text-teal-400 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+                Ridwanul Hoque Kawsar
               </span>
-              <span className="text-[10px] font-mono text-zinc-400 tracking-widest uppercase -mt-0.5">
-                Full-Stack &amp; CP
+              <span className="hidden sm:block text-[10px] text-zinc-400 tracking-wide -mt-0.5">
+                Full-Stack Web Developer
               </span>
             </div>
           </a>
@@ -88,7 +88,7 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
                   href={link.href}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white shadow-md shadow-indigo-600/30'
+                      ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-600/30'
                       : 'text-zinc-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -104,16 +104,16 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
             {/* Resume Button */}
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-zinc-200 bg-zinc-900/90 hover:bg-zinc-800 border border-white/10 hover:border-indigo-500/50 shadow-sm transition-all hover:text-white group"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-zinc-200 bg-zinc-900/90 hover:bg-zinc-800 border border-white/10 hover:border-emerald-500/50 shadow-sm transition-all hover:text-white group"
             >
-              <FileText className="w-3.5 h-3.5 text-indigo-400 group-hover:text-cyan-400 transition-colors" />
+              <FileText className="w-3.5 h-3.5 text-emerald-400 group-hover:text-teal-400 transition-colors" />
               <span>Resume</span>
             </button>
 
             {/* Let's Talk CTA */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 shadow-md shadow-indigo-600/25 hover:shadow-indigo-600/40 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-600/25 hover:shadow-emerald-600/40 transition-all hover:-translate-y-0.5"
             >
               <span>Get In Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -122,12 +122,12 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
 
           {/* Mobile Actions */}
           <div className="flex lg:hidden items-center gap-2">
-            <button type="button" onClick={onToggleTheme} aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`} className="theme-toggle p-2 rounded-xl bg-zinc-900 border border-white/10 text-zinc-300">{isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}</button>
+            <button type="button" onClick={onToggleTheme} aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`} className="theme-toggle max-[380px]:hidden p-2 rounded-xl bg-zinc-900 border border-white/10 text-zinc-300">{isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}</button>
             <button
               onClick={onOpenResume}
               className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-white/10 text-xs font-semibold text-zinc-200 flex items-center gap-1.5"
             >
-              <FileText className="w-3.5 h-3.5 text-indigo-400" />
+              <FileText className="w-3.5 h-3.5 text-emerald-400" />
               <span>CV</span>
             </button>
             <button
@@ -155,7 +155,7 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
                   onClick={() => setIsOpen(false)}
                   className={`px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? 'bg-indigo-600/20 text-indigo-300 border border-indigo-500/40'
+                      ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/40'
                       : 'text-zinc-300 hover:bg-zinc-800/60'
                   }`}
                 >
@@ -168,7 +168,7 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="w-full text-center block py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-cyan-600 shadow-md"
+              className="w-full text-center block py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 shadow-md"
             >
               Contact Me Directly
             </a>
@@ -178,3 +178,4 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
     </header>
   );
 }
+

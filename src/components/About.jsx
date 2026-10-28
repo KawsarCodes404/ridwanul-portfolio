@@ -25,7 +25,7 @@ export default function About() {
             <div className="mt-5 flex flex-wrap gap-2">{["Responsive interfaces", "Useful tools", "Full-stack projects"].map((item) => <span key={item} className="interest-chip px-2.5 py-1.5 rounded-lg border border-white/10 text-xs text-zinc-300">{item}</span>)}</div>
           </article>
           <article className="glass-card md:col-span-5 rounded-2xl p-6 sm:p-8 border border-white/10">
-            <div className="flex items-center gap-3 mb-5"><span className="learning-icon p-3 rounded-xl text-cyan-300"><Lightbulb className="w-5 h-5" /></span><div><h3 className="text-lg font-bold text-white">How I work</h3><p className="text-xs text-zinc-400">Curious, practical, and persistent</p></div></div>
+            <div className="flex items-center gap-3 mb-5"><span className="learning-icon p-3 rounded-xl text-teal-300"><Lightbulb className="w-5 h-5" /></span><div><h3 className="text-lg font-bold text-white">How I work</h3><p className="text-xs text-zinc-400">Curious, practical, and persistent</p></div></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">{about.personalityTraits.map((trait) => <span key={trait} className="interest-chip px-3 py-2.5 rounded-xl border border-white/10 text-xs text-zinc-300">{trait}</span>)}</div>
           </article>
           <article className="glass-card md:col-span-7 rounded-2xl p-6 sm:p-8 border border-white/10">

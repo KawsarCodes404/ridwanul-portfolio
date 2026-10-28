@@ -57,15 +57,15 @@ export default function Experience() {
         <div className="max-w-4xl mx-auto relative">
           
           {/* Vertical Timeline Guide Line */}
-          <div className="hidden sm:block absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-indigo-500 via-cyan-500 to-transparent" />
+          <div className="hidden sm:block absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-500 to-transparent" />
 
           <div className="space-y-8">
             {experience.map((item, idx) => (
               <div key={idx} className="relative sm:pl-20 group">
                 
                 {/* Timeline Dot Icon */}
-                <div className="hidden sm:flex absolute left-5 top-5 -translate-x-1/2 w-7 h-7 rounded-full bg-zinc-900 border-2 border-indigo-500 items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-110 group-hover:border-cyan-400 transition-all">
-                  <div className="w-2 h-2 rounded-full bg-indigo-400 group-hover:bg-cyan-300" />
+                <div className="hidden sm:flex absolute left-5 top-5 -translate-x-1/2 w-7 h-7 rounded-full bg-zinc-900 border-2 border-emerald-500 items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-110 group-hover:border-teal-400 transition-all">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 group-hover:bg-teal-300" />
                 </div>
 
                 <div className="glass-card rounded-2xl p-6 sm:p-7 border border-white/10 hover:border-emerald-500/30 transition-all duration-300">
@@ -75,7 +75,7 @@ export default function Experience() {
                         {item.role}
                       </h3>
                       <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-zinc-300 font-medium">
-                        <span className="flex items-center gap-1 text-cyan-400 font-semibold">
+                        <span className="flex items-center gap-1 text-teal-400 font-semibold">
                           {item.company}
                         </span>
                         <span className="text-zinc-600">•</span>
