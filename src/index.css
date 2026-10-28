@@ -73,3 +73,26 @@
       linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   }
 }
+
+/* Persisted light theme toggle: keep the same layout while shifting the surface palette. */
+html[data-theme="light"] body,
+html[data-theme="light"] .portfolio-shell { background-color: #f8fafc !important; color: #172033 !important; }
+html[data-theme="light"] body { color-scheme: light; }
+html[data-theme="light"] [class*="bg-[#09090b]"],
+html[data-theme="light"] [class*="bg-zinc-950"],
+html[data-theme="light"] [class*="bg-zinc-900"],
+html[data-theme="light"] [class*="bg-[#0d0d14]"] { background-color: #ffffff !important; }
+html[data-theme="light"] [class*="text-white"],
+html[data-theme="light"] [class*="text-zinc-100"],
+html[data-theme="light"] [class*="text-zinc-200"],
+html[data-theme="light"] [class*="text-zinc-300"] { color: #172033 !important; }
+html[data-theme="light"] [class*="text-zinc-400"],
+html[data-theme="light"] [class*="text-zinc-500"] { color: #526176 !important; }
+html[data-theme="light"] [class*="border-white/10"],
+html[data-theme="light"] [class*="border-white/5"] { border-color: #dbe3ec !important; }
+html[data-theme="light"] .glass-card { background: rgba(255,255,255,.88); border-color: #dbe3ec; box-shadow: 0 14px 38px rgba(15,23,42,.06); }
+html[data-theme="light"] .theme-toggle { color: #334155 !important; }
+html[data-theme="light"] header { background-color: rgba(248,250,252,.92); }
+html[data-theme="light"] .resume-modal { background: #fff; }
+html[data-theme="light"] ::-webkit-scrollbar-track { background: #f1f5f9; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }

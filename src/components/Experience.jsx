@@ -1,9 +1,9 @@
 import React from 'react';
-import { Briefcase, Calendar, CheckCircle2, Building2, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, Award, Terminal, Code2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Experience() {
-  const { experience } = portfolioData;
+  const { experience, cpProfiles } = portfolioData;
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-zinc-950/30">
@@ -13,14 +13,44 @@ export default function Experience() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-3">
             <Briefcase className="w-3.5 h-3.5" />
-            <span>CAREER MILESTONES</span>
+            <span>TRACK RECORD &amp; EXPERIENCE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Relevant Experience
+            Problem Solving &amp; Development Experience
           </h2>
           <p className="mt-3 text-base text-zinc-400">
-            Professional roles, freelance engineering, and open-source contributions delivering tangible value.
+            2+ years of continuous competitive programming rigor backed by hands-on full-stack project building.
           </p>
+        </div>
+
+        {/* CP Quick Status Bar */}
+        <div className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-zinc-900/60 border border-amber-500/30 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
+              <Award className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-white flex items-center gap-2">
+                2★ CodeChef Coder &amp; 600+ Algorithmic Solutions
+              </h3>
+              <p className="text-xs text-zinc-400 font-mono">
+                Competitive programming practice spanning more than two years
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {cpProfiles.slice(0, 3).map((cp, idx) => (
+              <a
+                key={idx}
+                href={cp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 rounded-lg bg-zinc-950 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white hover:border-amber-500/50 transition-colors"
+              >
+                {cp.name}: <span className="text-amber-400">{cp.rating}</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Experience Timeline */}
@@ -45,8 +75,7 @@ export default function Experience() {
                         {item.role}
                       </h3>
                       <div className="flex flex-wrap items-center gap-2 mt-1 text-xs text-zinc-300 font-medium">
-                        <span className="flex items-center gap-1 text-indigo-400">
-                          <Building2 className="w-3.5 h-3.5" />
+                        <span className="flex items-center gap-1 text-cyan-400 font-semibold">
                           {item.company}
                         </span>
                         <span className="text-zinc-600">•</span>
@@ -67,7 +96,7 @@ export default function Experience() {
                   {/* Bullet achievements */}
                   <div className="space-y-2 mb-5">
                     {item.achievements.map((ach, aIdx) => (
-                      <div key={aIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-400">
+                      <div key={aIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                         <span>{ach}</span>
                       </div>

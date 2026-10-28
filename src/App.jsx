@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,37 +12,44 @@ import ResumeModal from './components/ResumeModal';
 
 export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem('portfolio-theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    localStorage.setItem('portfolio-theme', theme);
+  }, [theme]);
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
-      {/* Top Navbar */}
-      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+    <div className="portfolio-shell min-h-screen bg-[#09090b] text-zinc-100 flex flex-col font-sans selection:bg-indigo-500/30 selection:text-cyan-200">
+      {/* Top Navigation */}
+      <Navbar onOpenResume={() => setIsResumeOpen(true)} theme={theme} onToggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
 
       {/* Main Content Sections */}
       <main className="flex-grow">
-        {/* Hero Section with designation, intro, photo, resume CTA, and socials */}
+        {/* Hero Section with Assalamu Alaikum greeting, photo, badges & CTAs */}
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* About Me Section with programming journey, work passions, hobbies, stats */}
+        {/* About Me Section: Journey, Phitron, Programming Hero, Hobbies & Traits */}
         <About />
 
-        {/* Skills Section categorized graphically (Frontend, Backend, Tools) */}
+        {/* Skills Section: Graphical categorized meters */}
         <Skills />
 
-        {/* Education Section detailing higher education above HSC */}
+        {/* Education Section: Phitron completed; Programming Hero Level 1 in progress */}
         <Education />
 
-        {/* Experience Section with career milestones & problem-solving leadership */}
+        {/* Experience Section: 2+ Years Problem Solving, 2★ CodeChef, 600+ Solved */}
         <Experience />
 
-        {/* Projects Section with 3+ projects, cards, and deep detail modals */}
+        {/* Projects Section: Pinned GitHub Projects with Details Modal */}
         <Projects />
 
-        {/* Contact Section with email, phone, whatsapp, and interactive form */}
+        {/* Contact Section: verified email and social links */}
         <Contact />
       </main>
 
-      {/* Elegant Footer */}
+      {/* High-End Polished Footer */}
       <Footer />
 
       {/* Resume Download / View Modal */}
