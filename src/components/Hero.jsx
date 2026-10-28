@@ -7,11 +7,8 @@ import {
   Twitter, 
   Facebook, 
   Terminal, 
-  Code2, 
-  CheckCircle2,
   ExternalLink,
   Award,
-  Zap
 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -140,64 +137,15 @@ export default function Hero({ onOpenResume }) {
 
           </div>
 
-          {/* Right Column: Hero Photo with Premium Architectural Framing */}
+          {/* Portrait softly blends into the page atmosphere */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative group">
-              
-              {/* Outer Ambient Glow Halo */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500 via-teal-400 to-teal-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-85 transition duration-700 animate-pulse-glow" />
-
-              {/* Layered Glass Frame */}
-              <div className="relative rounded-3xl p-1.5 bg-gradient-to-b from-white/30 via-white/5 to-white/15 backdrop-blur-2xl shadow-2xl shadow-black/80">
-                <div className="relative overflow-hidden rounded-[22px] bg-[#0c0d14] w-[280px] sm:w-[330px] md:w-[360px] aspect-[4/5]">
-                  <img
-                    src={personal.avatar}
-                    alt={personal.name}
-                    className="w-full h-full object-cover object-top scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  
-                  {/* Subtle Gradient Shadow at bottom of photo */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-black/20 to-transparent opacity-70" />
-
-                  {/* High-Tech Card Pill over photo footer */}
-                  <div className="absolute bottom-3 left-3 right-3 bg-zinc-950/85 backdrop-blur-md border border-white/10 rounded-xl p-3 shadow-xl">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="p-1.5 rounded-lg bg-emerald-600/30 text-emerald-400">
-                          <Code2 className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-white">Full-Stack &amp; DSA</p>
-                          <p className="text-[10px] text-zinc-400 font-mono">Next.js • TypeScript • C++</p>
-                        </div>
-                      </div>
-                      <span className="flex items-center gap-1 text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-md border border-emerald-500/30">
-                        <CheckCircle2 className="w-3 h-3" />
-                        Verified
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Achievement Badge 1 (Top Left): 2-Star CodeChef */}
-              <div className="absolute -top-4 -left-4 sm:-left-6 bg-zinc-950/90 backdrop-blur-md border border-amber-500/40 rounded-xl px-3.5 py-2 shadow-xl shadow-black/60 flex items-center gap-2 animate-float">
-                <Award className="w-4 h-4 text-amber-400" />
-                <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white font-mono">2★ CodeChef</span>
-                  <span className="block text-[9px] text-amber-400/90 font-mono">ridwanul_hoque</span>
-                </div>
-              </div>
-
-              {/* Floating Achievement Badge 2 (Bottom Right): 600+ CP Solved */}
-              <div className="absolute -bottom-4 -right-4 sm:-right-6 bg-zinc-950/90 backdrop-blur-md border border-teal-500/40 rounded-xl px-3.5 py-2 shadow-xl shadow-black/60 flex items-center gap-2 animate-float" style={{ animationDelay: '2s' }}>
-                <Terminal className="w-4 h-4 text-teal-400" />
-                <div className="text-left">
-                  <span className="block text-[11px] font-bold text-white font-mono">600+ Solved</span>
-                  <span className="block text-[9px] text-teal-400/90 font-mono">Online Judges</span>
-                </div>
-              </div>
-
+            <div className="hero-portrait-wrap relative isolate w-[min(84vw,390px)] aspect-[4/5]">
+              <div className="hero-portrait-glow absolute inset-x-[-18%] top-[8%] bottom-[4%] -z-10 rounded-full bg-gradient-to-br from-emerald-500/35 via-teal-500/25 to-teal-400/20 blur-[70px] transition-opacity duration-700" />
+              <img
+                src={personal.avatar}
+                alt={personal.name}
+                className="hero-portrait-image h-full w-full object-cover object-top transition-transform duration-700 ease-out hover:scale-[1.025]"
+              />
             </div>
           </div>
 

@@ -69,10 +69,10 @@ export default function Navbar({ onOpenResume, theme, onToggleTheme }) {
 
             {/* Developer Identity Text */}
             <div className="flex min-w-0 flex-col">
-              <span title="Ridwanul Hoque Kawsar" className="max-w-[138px] sm:max-w-none overflow-hidden text-ellipsis font-extrabold text-white tracking-tight text-[11px] sm:text-sm md:text-base leading-tight group-hover:text-teal-400 transition-colors flex items-center gap-1.5 whitespace-nowrap">
+              <span title="Ridwanul Hoque Kawsar" className="max-w-[138px] sm:max-w-none overflow-hidden text-ellipsis font-extrabold text-white tracking-tight text-[11px] sm:text-base md:text-lg leading-tight group-hover:text-teal-400 transition-colors flex items-center gap-1.5 whitespace-nowrap">
                 Ridwanul Hoque Kawsar
               </span>
-              <span className="hidden sm:block text-[10px] text-zinc-400 tracking-wide -mt-0.5">
+              <span className="hidden sm:block text-[10px] font-mono text-teal-400 tracking-wide -mt-0.5">
                 Full-Stack Web Developer
               </span>
             </div>
