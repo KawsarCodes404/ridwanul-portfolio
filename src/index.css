@@ -75,7 +75,11 @@
     radial-gradient(ellipse at 77% 9%, rgba(37, 99, 235, .11), transparent 34%),
     radial-gradient(ellipse at 7% 44%, rgba(8, 145, 178, .055), transparent 30%);
 }
-.hero-cutout { filter: drop-shadow(0 24px 54px rgba(37, 99, 235, .12)); }
+  .hero-cutout {
+    filter: drop-shadow(0 24px 54px rgba(37, 99, 235, .12));
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
+  }
 
 /* Reveal sections as they enter view; the App observer adds .is-visible. */
 .scroll-reveal { opacity: 0; transform: translate3d(0, 20px, 0); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }

@@ -151,11 +151,11 @@ export default function Hero({ onOpenResume }) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[420px] h-[440px] bg-gradient-to-tr from-blue-600/40 via-blue-500/25 to-cyan-400/20 rounded-full blur-[80px] pointer-events-none" />
 
             {/* Transparent portrait cutout sits directly on the sapphire glow */}
-            <div className="relative w-[300px] sm:w-[350px] md:w-[380px] aspect-[4/5] flex items-center justify-center">
+            <div className="relative w-[340px] sm:w-[420px] md:w-[480px] h-[430px] sm:h-[500px] md:h-[560px] flex items-end justify-center">
               <img
                 src={personal.avatar}
                 alt={personal.name}
-                className="hero-cutout relative z-10 h-full w-full object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.025]"
+                className="hero-cutout relative z-10 h-full w-[135%] max-w-none object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.025]"
               />
             </div>
 
