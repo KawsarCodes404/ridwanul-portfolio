@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, CheckCircle2, Award, Terminal, Code2 } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, Award, Terminal, Code2, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -24,30 +24,28 @@ export default function Experience() {
         </div>
 
         {/* CP Quick Status Bar */}
-        <div className="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-[#0d1424] border border-amber-500/30 flex flex-wrap items-center justify-between gap-4 shadow-xl">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              <Award className="w-6 h-6" />
+        <div className="max-w-4xl mx-auto mb-10 overflow-hidden rounded-3xl border border-white/[0.09] bg-gradient-to-br from-[#10192b] via-[#0c1321] to-[#0a0e17] p-5 shadow-[0_24px_70px_-48px_rgba(37,99,235,.5)] sm:p-7">
+          <div className="flex items-start gap-4 sm:gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-amber-300/20 bg-amber-300/[0.09] text-amber-300 shadow-inner shadow-amber-300/[0.04] sm:h-14 sm:w-14">
+              <Award className="h-6 w-6 sm:h-7 sm:w-7" />
             </div>
-            <div>
-              <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                2★ CodeChef Coder &amp; 600+ Algorithmic Solutions
-              </h3>
-              <p className="text-xs text-zinc-400 font-mono">
-                Competitive programming across CodeChef, CodeLab &amp; Codeforces
-              </p>
+            <div className="min-w-0 flex-1">
+              <div className="mb-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.17em] text-sky-300">Competitive programming</span>
+                <span className="hidden h-1 w-1 rounded-full bg-slate-600 sm:block" />
+                <span className="text-[11px] text-slate-500">2+ years of consistent practice</span>
+              </div>
+              <h3 className="text-base font-bold leading-snug tracking-tight text-white sm:text-lg">2★ CodeChef coder <span className="mx-1 text-slate-600">·</span> 600+ problems solved</h3>
+              <p className="mt-1.5 max-w-2xl text-xs leading-relaxed text-slate-400 sm:text-sm">Building algorithmic fluency through regular contests and problem solving across multiple platforms.</p>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {cpProfiles.map((cp, idx) => (
-              <a
-                key={idx}
-                href={cp.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1 rounded-lg bg-[#07090e] border border-white/10 text-xs font-mono text-zinc-300 hover:text-white hover:border-amber-500/50 transition-colors"
-              >
-                {cp.name}: <span className="text-amber-400">{cp.rating}</span>
+
+          <div className="mt-5 grid grid-cols-1 gap-2 border-t border-white/[0.07] pt-4 sm:grid-cols-3 sm:gap-3">
+            {cpProfiles.map((cp) => (
+              <a key={cp.name} href={cp.url} target="_blank" rel="noopener noreferrer"
+                className="group flex min-w-0 items-center justify-between gap-3 rounded-2xl border border-white/[0.07] bg-black/20 px-4 py-3 transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-300/25 hover:bg-sky-300/[0.045] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/50">
+                <span className="min-w-0"><span className="block text-xs font-semibold text-slate-200">{cp.name}</span><span className="mt-1 block truncate font-mono text-[11px] text-sky-300">{cp.rating}</span></span>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-500 transition-colors group-hover:text-sky-300" />
               </a>
             ))}
           </div>
