@@ -34,12 +34,12 @@ export default function Experience() {
                 2★ CodeChef Coder &amp; 600+ Algorithmic Solutions
               </h3>
               <p className="text-xs text-zinc-400 font-mono">
-                Active contender on Codeforces, CodeChef, LeetCode &amp; VJudge
+                Competitive programming across CodeChef, CodeLab &amp; Codeforces
               </p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            {cpProfiles.slice(0, 3).map((cp, idx) => (
+            {cpProfiles.map((cp, idx) => (
               <a
                 key={idx}
                 href={cp.url}

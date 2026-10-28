@@ -33,6 +33,7 @@ export const portfolioData = {
 
   cpProfiles: [
     { name: "CodeChef", rating: "2★ Coder", url: "https://www.codechef.com/users/ridwanul_hoque" },
+    { name: "CodeLab", rating: "50 solved · Top 5%", url: "https://codelab.programming-hero.com/labs/code-lab/profile" },
     { name: "Codeforces", rating: "Profile", url: "https://codeforces.com/profile/Ridwanul_Hoque_Kawsar_2" },
   ],
 
