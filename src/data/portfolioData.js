@@ -6,7 +6,7 @@ export const portfolioData = {
     secondaryTitle: "React · TypeScript · Next.js · Tailwind CSS",
     tagline: "Building responsive, user-focused web experiences that solve real problems. I enjoy turning ideas into clear interfaces and dependable web applications.",
     bio: "Full-stack web developer focused on React, TypeScript, Next.js, and Tailwind CSS. I build responsive, user-focused web experiences and keep strengthening my skills through hands-on projects and problem solving.",
-    avatar: "/profile.jpg",
+    avatar: "/profile-cutout.png",
     location: "Comilla, Bangladesh",
     email: "ridwanulhoquekawsar404@gmail.com",
     phone: "+8801623222123",

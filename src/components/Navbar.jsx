@@ -75,30 +75,27 @@ export default function Navbar({ onOpenResume }) {
           </a>
 
           {/* Desktop Navigation Links - Same Font, Gap & Tone as Footer */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-8">
+          <nav aria-label="Primary navigation" className="hidden lg:flex shrink-0 items-center gap-1 rounded-full border border-white/10 bg-[#11141d]/90 p-1.5 shadow-lg shadow-black/20 backdrop-blur-xl">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-xs sm:text-[13px] font-medium transition-all duration-200 relative py-1 ${
+                  className={`relative rounded-full px-3.5 xl:px-4 py-2 text-[11px] xl:text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'text-cyan-400 font-semibold'
-                      : 'text-zinc-400 hover:text-cyan-400'
+                      ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-blue-600/25'
+                      : 'text-zinc-400 hover:bg-white/[0.06] hover:text-zinc-100'
                   }`}
                 >
                   {link.name}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
-                  )}
                 </a>
               );
             })}
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             {/* Resume Button */}
             <button
               onClick={onOpenResume}
@@ -119,7 +116,7 @@ export default function Navbar({ onOpenResume }) {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenResume}
               className="px-3 py-1.5 rounded-lg bg-[#0d1424] border border-blue-500/20 text-xs font-medium text-zinc-200 flex items-center gap-1.5"
@@ -141,7 +138,7 @@ export default function Navbar({ onOpenResume }) {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden bg-[#07090e]/98 backdrop-blur-2xl border-b border-white/10 px-5 pt-3 pb-6 space-y-3 animate-fadeIn">
+        <div className="lg:hidden bg-[#07090e]/98 backdrop-blur-2xl border-b border-white/10 px-5 pt-3 pb-6 space-y-3 animate-fadeIn">
           <div className="grid grid-cols-2 gap-2 pt-2">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);

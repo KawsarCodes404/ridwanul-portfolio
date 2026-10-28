@@ -150,18 +150,13 @@ export default function Hero({ onOpenResume }) {
             {/* Blushing Sapphire Spotlight behind photo matching the photo background */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[420px] h-[440px] bg-gradient-to-tr from-blue-600/40 via-blue-500/25 to-cyan-400/20 rounded-full blur-[80px] pointer-events-none" />
 
-            {/* Photo Container with Seamless Vignette & Bottom Feather Fade */}
+            {/* Transparent portrait cutout sits directly on the sapphire glow */}
             <div className="relative w-[300px] sm:w-[350px] md:w-[380px] aspect-[4/5] flex items-center justify-center">
-              
-              {/* Image with gradient mask - blends organically into the website background */}
-              <div className="relative w-full h-full overflow-hidden hero-bottom-fade">
-                <img
-                  src={personal.avatar}
-                  alt={personal.name}
-                  className="hero-photo-blend w-full h-full object-cover object-top scale-100 hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                
-              </div>
+              <img
+                src={personal.avatar}
+                alt={personal.name}
+                className="hero-cutout relative z-10 h-full w-full object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.025]"
+              />
             </div>
 
           </div>
