@@ -102,6 +102,17 @@ export default function ProjectModal({ project, onClose }) {
                 <span>GitHub Repository (Client)</span>
               </a>
             )}
+            {project.backendGithub && (
+              <a
+                href={project.backendGithub}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-zinc-200 bg-zinc-800/90 hover:bg-zinc-700 border border-white/10 hover:border-zinc-500 transition-all hover:-translate-y-0.5"
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>Backend GitHub Repository</span>
+              </a>
+            )}
           </div>
 
           {/* Main Technology Stack (Requirement 9) */}

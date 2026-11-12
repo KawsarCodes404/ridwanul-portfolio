@@ -88,6 +88,22 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "book-nook",
+      title: "Book Nook",
+      category: "Community book-sharing library",
+      badge: "Latest project",
+      image: "/projects/book-nook-frontend-image.png",
+      shortDesc: "A community library where readers can share books from their shelves, borrow from others, and return them after reading.",
+      fullDesc: "Book Nook is a responsive online library for readers to discover books and share their own shelves. Users can search by title, author, and category, manage their listed books, borrow available copies for seven days, and return them from their borrow list. Authentication supports email/password and Google sign-in.",
+      mainTechStack: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Better Auth", "MongoDB", "Express", "jose"],
+      liveLink: "https://book-nook-frontend-delta.vercel.app/",
+      clientGithub: "https://github.com/KawsarCodes404/book-nook-frontend",
+      backendGithub: "https://github.com/KawsarCodes404/book-nook-backend",
+      challengesFaced: "Connecting the authenticated Next.js frontend to a separate Express API, verifying Better Auth JWTs through the frontend JWKS endpoint, and keeping available-copy counts accurate as readers borrow and return books.",
+      futurePlans: "The project is an ongoing work in progress. Future improvements can build on the current book discovery, shelf management, and borrowing flows.",
+      keyFeatures: ["Browse and search books by title, author, and category", "Newest arrivals and featured book sections", "Email/password and Google authentication", "Add, edit, and remove books from your shelf", "Borrow available copies for seven days and return them", "Protected API routes with Better Auth JWT verification"],
+    },
+    {
       id: "bazar-dor",
       title: "BazarDor",
       category: "Market price dashboard",
