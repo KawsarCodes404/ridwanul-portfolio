@@ -155,7 +155,7 @@ export default function Hero({ onOpenResume }) {
               <img
                 src={personal.avatar}
                 alt={personal.name}
-                className="hero-cutout relative z-10 h-full w-[135%] max-w-none object-contain object-bottom transition-transform duration-700 ease-out hover:scale-[1.025]"
+                className="hero-cutout relative z-10 h-full w-[135%] max-w-none object-contain object-bottom max-sm:translate-x-[6px] transition-transform duration-700 ease-out hover:scale-[1.025]"
               />
             </div>
 
