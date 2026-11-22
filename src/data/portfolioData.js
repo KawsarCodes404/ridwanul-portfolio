@@ -90,6 +90,22 @@ export const portfolioData = {
 
   projects: [
     {
+      id: "wedplan",
+      title: "WedPlan | Wedding Services Marketplace",
+      category: "Wedding services marketplace",
+      badge: "Latest project",
+      image: "/projects/wedplan.png",
+      shortDesc: "A full-stack wedding marketplace where couples discover verified vendors, compare services, and manage booking requests.",
+      fullDesc: "WedPlan connects couples with verified wedding vendors in one responsive marketplace. Customers can search approved services by keyword, category, and location, view service galleries, and track booking requests. Vendors manage listings and bookings, while admins review users, services, and transactions. A Premium subscription adds unlimited active services and a vendor badge.",
+      mainTechStack: ["Next.js 16", "React", "TypeScript", "Tailwind CSS", "Better Auth", "MongoDB", "Express 5", "JWT/JWKS", "Stripe", "ImgBB", "Framer Motion", "Vercel"],
+      liveLink: "https://wedplan-marketplace.vercel.app/",
+      clientGithub: "https://github.com/KawsarCodes404/wedplan-marketplace",
+      backendGithub: "https://github.com/KawsarCodes404/wedplan-api",
+      challengesFaced: "Connecting a Next.js client to a separate Express API while protecting routes with Better Auth JWT verification and role checks. The project also coordinates booking workflows, service image uploads, and Premium subscription updates through verified Stripe webhooks.",
+      futurePlans: "Continue improving the marketplace experience with more vendor discovery options, clearer booking updates, and refinements based on feedback from couples and vendors.",
+      keyFeatures: ["Search approved services by keyword, category, and location", "Customer, vendor, and admin dashboards", "Booking requests and status tracking", "Vendor service and booking management", "Premium subscriptions with Stripe Checkout and verified webhooks", "Protected API routes with JWT, role, and ownership checks", "Service image uploads through the backend"],
+    },
+    {
       id: "book-nook",
       title: "Book Nook",
       category: "Community book-sharing library",
